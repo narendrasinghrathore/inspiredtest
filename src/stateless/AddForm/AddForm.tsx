@@ -7,8 +7,10 @@ export default function AddFormComponent(props: any) {
 
   const handleClick = (e: any) => {
     e.preventDefault();
-    props.onSubmit({ id: uuid.v4(), name });
-    setName('');
+    if (name.length > 0) {
+      props.onSubmit({ id: uuid.v4(), name });
+      setName('');
+    }
   };
 
   return (
